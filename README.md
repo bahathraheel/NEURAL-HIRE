@@ -10,12 +10,7 @@
 
 **An elite AI-powered recruitment intelligence platform that doesn't just rank candidates — it understands careers, predicts futures, and protects against bias.**
 
-### 🌐 Live Demo → [https://neural-hire.vercel.app](https://neural-hire.vercel.app/neuralhire)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/bahathraheel/NEURAL-HIRE)
-
-</div>
-
+### 🌐 Live Demo → 
 ---
 
 ## ✨ What is NeuralHire v2?
