@@ -9,7 +9,7 @@
 
 **An elite AI-powered recruitment intelligence platform that doesn't just rank candidates — it understands careers, predicts futures, and protects against bias.**
 
-### 🌐 Live Demo → [https://elite-hire-ecaeb.web.app/neuralhire](https://elite-hire-ecaeb.web.app/neuralhire)
+### 🌐 Live Link → [https://elite-hire-ecaeb.web.app/neuralhire](https://elite-hire-ecaeb.web.app/neuralhire)
 
 </div>
 
