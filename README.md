@@ -217,12 +217,6 @@ Switch to the **🔄 Adaptive Re-rank** tab to:
 
 ---
 
-## 📄 License
-
-MIT License — free to use, modify, and distribute.
-
----
-
 ## 👤 Author
 
 **Bahath Raheel**
@@ -233,8 +227,6 @@ MIT License — free to use, modify, and distribute.
 
 <div align="center">
 
-Built with ❤️ as part of the **Anti Gravity Datathon**
 
-⭐ Star this repo if NeuralHire v2 helped you hire smarter!
 
 </div>
