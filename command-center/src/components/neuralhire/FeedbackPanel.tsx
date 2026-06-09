@@ -32,12 +32,6 @@ export function FeedbackPanel({ result, feedback, onFeedback }: FeedbackPanelPro
   const allCandidates = [...result.shortlist, ...result.nearMisses];
   const { weights, signals } = feedback;
 
-  const getShift = (key: string) => {
-    const base = BASE_WEIGHTS[key as keyof SignalWeights] as number;
-    const curr = weights[key as keyof SignalWeights] as number;
-    return curr - base;
-  };
-
   const feedbackCount = signals.length;
   const showFormula = feedbackCount >= 3;
 

@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import TextType from "./TextType";
+import { NeuralCore3D } from "./NeuralCore3D";
 
 const SAMPLE_JD = `Senior Product Manager – AI Platform
 
@@ -71,16 +73,45 @@ export function InputPanel({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
     >
-      {/* Instructions banner */}
-      <div className="nh-info-banner">
-        <span className="nh-info-icon">💡</span>
-        <div>
-          <strong>How to use NeuralHire v2</strong>
-          <p>Paste your Job Description and candidate profiles (separated by <code>---</code>). Optionally add team composition data for chemistry scoring. Then run the 6-phase analysis.</p>
+      {/* Premium Hero Section with Typing Animation and Interactive 3D Core */}
+      <div className="nh-hero-banner">
+        <div className="nh-hero-content">
+          <div className="nh-hero-badge">
+            <span className="nh-hero-badge-dot" />
+            Next-Gen Recruitment Intelligence
+          </div>
+          
+          <h1 className="nh-hero-title">
+            <TextType 
+              text={["Elite-hire", "Deep Talent Analysis", "Bias-Free Evaluation"]}
+              typingSpeed={75}
+              pauseDuration={2000}
+              showCursor={true}
+              cursorCharacter="▊"
+              cursorClassName="nh-hero-cursor"
+            />
+          </h1>
+
+          <p className="nh-hero-desc">
+            An elite AI-powered recruitment engine combining executive search judgment, 
+            behavioural science, and deep analytics into a rigorous 6-phase scoring pipeline. 
+            Paste your requirements and profiles below to begin.
+          </p>
+
+          <div className="nh-hero-actions">
+            <button className="nh-sample-btn-hero" onClick={loadSample} id="btn-load-sample">
+              ⚡ Load Sample Intelligence Profile
+            </button>
+          </div>
         </div>
-        <button className="nh-sample-btn" onClick={loadSample} id="btn-load-sample">
-          Load Sample Data
-        </button>
+
+        <div className="nh-hero-visual">
+          <NeuralCore3D />
+          <div className="nh-hero-visual-label">
+            <span>Core Evaluation Matrix</span>
+            <span className="nh-hero-visual-sub">Hover to interact in 3D</span>
+          </div>
+        </div>
       </div>
 
       <div className="nh-input-grid">
@@ -90,7 +121,7 @@ export function InputPanel({
             <span className="nh-label-badge nh-badge-violet">Phase 0–1</span>
             Job Description
           </label>
-          <p className="nh-label-hint">Paste the full JD. NeuralHire will audit for bias before analysis.</p>
+          <p className="nh-label-hint">Paste the full JD. Elite-hire will audit for bias before analysis.</p>
           <textarea
             id="jd-input"
             className="nh-textarea"
@@ -159,7 +190,7 @@ export function InputPanel({
           ) : (
             <>
               <span>⚡</span>
-              Run NeuralHire Analysis
+              Run Elite-hire Analysis
             </>
           )}
         </button>

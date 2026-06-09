@@ -1,6 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { onAuthStateChanged, User } from "firebase/auth";
+import { auth } from "@/lib/firebase";
+import AuthModal from "@/components/neuralhire/AuthModal";
 import { NeuralHireEngine } from "@/components/neuralhire/NeuralHireEngine";
 import { NeuralHireHeader } from "@/components/neuralhire/NeuralHireHeader";
 import { InputPanel } from "@/components/neuralhire/InputPanel";
@@ -63,6 +66,48 @@ export default function NeuralHirePage() {
     }
   };
 
+  const [user, setUser] = useState<User | null>(null);
+  const [authLoading, setAuthLoading] = useState(true);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (usr) => {
+      setUser(usr);
+      setAuthLoading(false);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  if (authLoading) {
+    return (
+      <div className="neuralhire-root">
+        <div className="nh-bg">
+          <div className="nh-bg-orb nh-bg-orb-1" />
+          <div className="nh-bg-orb nh-bg-orb-2" />
+          <div className="nh-bg-orb nh-bg-orb-3" />
+          <div className="nh-bg-grid" />
+        </div>
+        <div className="nh-analyzing" style={{ height: "100vh" }}>
+          <div className="nh-spinner" style={{ width: 40, height: 40, borderTopColor: '#6366f1' }} />
+          <h2 className="nh-analyzing-title">Establishing Authentication Session…</h2>
+        </div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="neuralhire-root">
+        <div className="nh-bg">
+          <div className="nh-bg-orb nh-bg-orb-1" />
+          <div className="nh-bg-orb nh-bg-orb-2" />
+          <div className="nh-bg-orb nh-bg-orb-3" />
+          <div className="nh-bg-grid" />
+        </div>
+        <AuthModal />
+      </div>
+    );
+  }
+
   return (
     <div className="neuralhire-root">
       {/* Animated background */}
@@ -74,7 +119,7 @@ export default function NeuralHirePage() {
       </div>
 
       <div className="nh-layout">
-        <NeuralHireHeader />
+        <NeuralHireHeader user={user} />
 
         {/* Tab bar */}
         <div className="nh-tabs">

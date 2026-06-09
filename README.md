@@ -1,21 +1,25 @@
-# 🧠 NeuralHire v2 — Elite AI Recruitment Intelligence Engine
+# 🧠 Elite-hire — Elite AI Recruitment Intelligence Engine
 
 <div align="center">
 
-![NeuralHire v2](https://img.shields.io/badge/NeuralHire-v2.0-6366f1?style=for-the-badge&logo=brain&logoColor=white)
+![Elite-hire](https://img.shields.io/badge/Elite--hire-v2.0-8d7a6e?style=for-the-badge&logo=brain&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178c6?style=for-the-badge&logo=typescript&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind-CSS-06b6d4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer-Motion-ff69b4?style=for-the-badge&logo=framer&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-Auth%20%26%20Hosting-ffca28?style=for-the-badge&logo=firebase&logoColor=black)
 
 **An elite AI-powered recruitment intelligence platform that doesn't just rank candidates — it understands careers, predicts futures, and protects against bias.**
 
-### 🌐 Live Demo → 
+### 🌐 Live Demo → [https://elite-hire-ecaeb.web.app/neuralhire](https://elite-hire-ecaeb.web.app/neuralhire)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/bahathraheel/NEURAL-HIRE)
+
+</div>
+
 ---
 
-## ✨ What is NeuralHire v2?
+## ✨ What is Elite-hire?
 
-NeuralHire v2 combines the judgment of a **top-tier executive search partner**, a **behavioural psychologist**, and a **data scientist** into a single intelligent recruitment engine. It processes Job Descriptions and candidate profiles through a rigorous **6-phase analysis pipeline** to deliver ranked, bias-free hiring intelligence.
+Elite-hire combines the judgment of a **top-tier executive search partner**, a **behavioural psychologist**, and a **data scientist** into a single intelligent recruitment engine. It processes Job Descriptions and candidate profiles through a rigorous **6-phase analysis pipeline** to deliver ranked, bias-free hiring intelligence.
 
 ---
 
@@ -80,6 +84,17 @@ For every candidate scoring 50–65 ("near-misses"):
 - After 3+ ratings → updated formula stated transparently before rescoring
 - ±9% cap — no single signal shifts more than 9% from baseline
 
+### 🔒 Firebase Authentication & Security
+- **Secure Access Guard** — Blocks workspace views until authenticated.
+- **Manual Login/Register** — Secure Email & Password login slot.
+- **Google Sign-In** — Integrated popup OAuth branding flow.
+- **Active Session Profiling** — User initials profile chip and functional Sign Out menu.
+
+### 🎨 Premium Visual Aesthetics
+- **Floral White & Pale Brown Styling** — A warm, high-end editorial palette featuring soft `#fffaf0` backdrops and deep `#3e2723` brown typography.
+- **Interactive 3D Evaluation Core** — An interactive concentric orbital graphic that tilts in three-dimensional space following mouse coordinates.
+- **Typing Slogan Banner** — Uses `TextType` (GSAP-powered) to cycle slogan sequences on load.
+
 ---
 
 ## 🖥️ Screenshots
@@ -98,8 +113,9 @@ For every candidate scoring 50–65 ("near-misses"):
 |-------|-----------|
 | Framework | Next.js 14 (App Router) |
 | Language | TypeScript 5 |
-| Styling | Tailwind CSS + Custom CSS (white theme) |
-| Animation | Framer Motion |
+| Services | Firebase Authentication & Firebase Hosting |
+| Styling | Tailwind CSS + Custom CSS (floral white & pale brown theme) |
+| Animation | Framer Motion + GSAP |
 | Icons | Lucide React |
 | State | React useState (client components) |
 | Fonts | Inter + JetBrains Mono (Google Fonts) |

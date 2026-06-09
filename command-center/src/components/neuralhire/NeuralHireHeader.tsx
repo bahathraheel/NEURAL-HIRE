@@ -1,8 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { User, signOut } from "firebase/auth";
+import { auth } from "@/lib/firebase";
 
-export function NeuralHireHeader() {
+interface NeuralHireHeaderProps {
+  user?: User | null;
+}
+
+export function NeuralHireHeader({ user }: NeuralHireHeaderProps) {
+  const handleSignOut = () => {
+    signOut(auth);
+  };
+
   return (
     <motion.header
       className="nh-header"
@@ -37,7 +47,7 @@ export function NeuralHireHeader() {
           </svg>
         </div>
         <div>
-          <h1 className="nh-logo-title">NeuralHire <span className="nh-logo-v2">v2</span></h1>
+          <h1 className="nh-logo-title">Elite-hire</h1>
           <p className="nh-logo-sub">Elite AI Recruitment Intelligence Engine</p>
         </div>
       </div>
@@ -46,6 +56,23 @@ export function NeuralHireHeader() {
         <span className="nh-pill nh-pill-violet">6-Phase Analysis</span>
         <span className="nh-pill nh-pill-indigo">Bias Audited</span>
         <span className="nh-pill nh-pill-purple">Adaptive Weights</span>
+
+        {user && (
+          <div className="nh-user-badge">
+            <div className="nh-user-avatar">
+              {user.displayName
+                ? user.displayName.split(" ").map((w) => w[0]).join("").slice(0, 2).toUpperCase()
+                : user.email?.slice(0, 2).toUpperCase()}
+            </div>
+            <div className="nh-user-info-dropdown">
+              <span className="nh-user-email">{user.email}</span>
+              <button onClick={handleSignOut} className="nh-logout-btn" id="btn-logout">
+                Sign Out
+              </button>
+            </div>
+          </div>
+        )}
+
         <div className="nh-status-dot">
           <span className="nh-status-pulse" />
           <span className="nh-status-text">Engine Ready</span>

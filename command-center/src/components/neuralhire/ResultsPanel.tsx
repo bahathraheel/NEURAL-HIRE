@@ -224,7 +224,7 @@ function CandidateCard({
           >
             <div className="nh-brief-thesis">
               <span className="nh-brief-label">One-line Thesis</span>
-              <p>"{hireBrief.thesis}"</p>
+              <p>&quot;{hireBrief.thesis}&quot;</p>
             </div>
 
             <div className="nh-brief-strengths">
@@ -356,7 +356,7 @@ export function ResultsPanel({ result, isAnalyzing, onFeedback, onSwitchFeedback
             />
           ))}
         </div>
-        <h2 className="nh-analyzing-title">Running 6-Phase NeuralHire Analysis…</h2>
+        <h2 className="nh-analyzing-title">Running 6-Phase Elite-hire Analysis…</h2>
         <div className="nh-phase-list">
           {[
             "Phase 0: Bias Audit",

@@ -610,7 +610,7 @@ function generateHireBrief(
     });
 
   // Primary risk
-  let primaryRisk =
+  const primaryRisk =
     signals.churnRisk === "HIGH"
       ? `Churn risk is HIGH: ${signals.churnReason} This is a first-class concern, not a footnote.`
       : signals.D < 60

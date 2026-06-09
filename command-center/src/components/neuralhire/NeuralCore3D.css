@@ -1,0 +1,204 @@
+.neural-core-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.neural-core-3d {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Central glowing core sphere */
+.core-sphere {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #c5b3a6 0%, #8d7a6e 60%, #4e3629 100%);
+  box-shadow: 
+    0 0 30px rgba(141, 122, 110, 0.6),
+    0 0 60px rgba(141, 122, 110, 0.3),
+    inset 0 0 15px rgba(255, 255, 255, 0.4);
+  transform-style: preserve-3d;
+  animation: pulse-core 4s ease-in-out infinite alternate;
+}
+
+.core-sphere-glow {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(141, 122, 110, 0.2) 0%, rgba(141, 122, 110, 0) 70%);
+  filter: blur(8px);
+  transform: translateZ(0);
+  pointer-events: none;
+}
+
+/* Interactive orbital rings */
+.orbital-ring {
+  position: absolute;
+  border: 1.5px dashed rgba(141, 122, 110, 0.45);
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.ring-1 {
+  width: 140px;
+  height: 140px;
+  transform: rotateX(70deg) rotateY(15deg);
+  animation: rotate-ring-1 25s linear infinite;
+}
+
+.ring-2 {
+  width: 180px;
+  height: 180px;
+  transform: rotateX(-45deg) rotateY(45deg);
+  animation: rotate-ring-2 30s linear infinite reverse;
+  border-color: rgba(197, 179, 166, 0.5);
+}
+
+.ring-3 {
+  width: 220px;
+  height: 220px;
+  transform: rotateX(15deg) rotateY(75deg);
+  animation: rotate-ring-3 35s linear infinite;
+  border-color: rgba(215, 204, 200, 0.4);
+}
+
+/* Floating nodes on the rings */
+.neural-node {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2px solid #8d7a6e;
+  box-shadow: 0 0 10px #c5b3a6, 0 0 20px rgba(141, 122, 110, 0.5);
+  transform-style: preserve-3d;
+  top: 50%;
+  left: 50%;
+  margin-top: -5px;
+  margin-left: -5px;
+}
+
+/* Position nodes along the ring circumferences */
+.node-r1-1 { transform: rotate(0deg) translate(70px) rotate(0deg); }
+.node-r1-2 { transform: rotate(120deg) translate(70px) rotate(-120deg); }
+.node-r1-3 { transform: rotate(240deg) translate(70px) rotate(-240deg); }
+
+.node-r2-1 { transform: rotate(45deg) translate(90px) rotate(-45deg); border-color: #bcaaa4; box-shadow: 0 0 10px #d7ccc8; }
+.node-r2-2 { transform: rotate(185deg) translate(90px) rotate(-185deg); border-color: #bcaaa4; box-shadow: 0 0 10px #d7ccc8; }
+.node-r2-3 { transform: rotate(305deg) translate(90px) rotate(-305deg); border-color: #bcaaa4; box-shadow: 0 0 10px #d7ccc8; }
+
+.node-r3-1 { transform: rotate(90deg) translate(110px) rotate(-90deg); border-color: #d7ccc8; }
+.node-r3-2 { transform: rotate(270deg) translate(110px) rotate(-270deg); border-color: #d7ccc8; }
+
+/* Holographic 3D Floating Particles */
+.floating-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: rgba(141, 122, 110, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(0.5px);
+}
+
+/* Keyframes */
+@keyframes pulse-core {
+  0% {
+    transform: scale(0.95) translateZ(0);
+    box-shadow: 
+      0 0 25px rgba(141, 122, 110, 0.5),
+      0 0 50px rgba(141, 122, 110, 0.2),
+      inset 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    transform: scale(1.05) translateZ(10px);
+    box-shadow: 
+      0 0 40px rgba(141, 122, 110, 0.8),
+      0 0 80px rgba(141, 122, 110, 0.4),
+      inset 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+}
+
+@keyframes rotate-ring-1 {
+  from {
+    transform: rotateX(70deg) rotateY(15deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(70deg) rotateY(15deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-ring-2 {
+  from {
+    transform: rotateX(-45deg) rotateY(45deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(-45deg) rotateY(45deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-ring-3 {
+  from {
+    transform: rotateX(15deg) rotateY(75deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(15deg) rotateY(75deg) rotateZ(360deg);
+  }
+}
+
+/* Dynamic scanning glow bar */
+.scanning-grid {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  border-radius: 50%;
+  border: 1px solid rgba(141, 122, 110, 0.1);
+  background: radial-gradient(circle, rgba(141, 122, 110, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translateZ(-50px);
+  overflow: hidden;
+}
+
+.scanning-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(141, 122, 110, 0.35), transparent);
+  animation: scan-line 4s linear infinite;
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(300px);
+    opacity: 0;
+  }
+}
