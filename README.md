@@ -11,8 +11,6 @@
 
 ### 🌐 Live Demo → [https://elite-hire-ecaeb.web.app/neuralhire](https://elite-hire-ecaeb.web.app/neuralhire)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/bahathraheel/NEURAL-HIRE)
-
 </div>
 
 ---
